@@ -1,8 +1,12 @@
+//Importing necessary files
 import React from "react";
 import "./Meal.css";
+
+//Importing fontawesome library
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandRock } from "@fortawesome/free-solid-svg-icons";
 
+//The Meal component
 const Meal = (props) => {
   const { strMeal, strCategory, strArea, strMealThumb } = props.meal;
   const grabIcon = <FontAwesomeIcon icon={faHandRock}></FontAwesomeIcon>;
