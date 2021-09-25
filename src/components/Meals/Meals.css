@@ -1,0 +1,13 @@
+.all-meals {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.meal-area {
+  margin-left: 5rem;
+  border-right: 1px solid #cfaae9;
+}
+
+.selection-area {
+  text-align: center;
+}

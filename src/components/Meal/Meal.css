@@ -1,0 +1,34 @@
+.meal {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #cfaae9;
+  display: flex;
+  gap: 5rem;
+}
+
+.meal img {
+  width: 25%;
+  border: 5px solid #9944d6;
+  border-radius: 5px;
+}
+
+.meal p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.meal button {
+  margin-top: 1.5rem;
+  padding: 0.7rem 4rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #9944d6;
+  color: #fefeff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.meal button:hover {
+  background-color: #7d1fc0;
+}

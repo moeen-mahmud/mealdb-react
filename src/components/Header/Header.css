@@ -1,0 +1,33 @@
+.header-section {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.header-section h1 {
+  font-size: 3.5rem;
+  line-height: 0;
+  color: #9944d6;
+}
+
+.header-section small {
+  font-weight: 500;
+}
+
+nav {
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  background-color: #9944d6;
+}
+
+nav a {
+  margin-right: 1.8rem;
+  text-decoration: none;
+  color: #fefeff;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+nav a:hover {
+  color: #9944d6;
+  background-color: #fefeff;
+}
