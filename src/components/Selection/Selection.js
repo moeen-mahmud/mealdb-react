@@ -6,6 +6,7 @@ const Selection = (props) => {
 
   let mealQuantity = 0;
   let sameMeal = [];
+  let distinctItem = [];
   let mealName = [];
   for (const meal of selection) {
     if (!meal.quantity) {
@@ -13,17 +14,26 @@ const Selection = (props) => {
     }
     mealQuantity = mealQuantity + meal.quantity;
     mealName.push(meal.strMeal);
+
+    if (sameMeal.indexOf(meal) === -1) {
+      sameMeal.push(meal.strMeal);
+    }
+    for (const item of sameMeal) {
+      if (distinctItem.indexOf(item) === -1) {
+        distinctItem.push(item);
+      }
+    }
   }
-  console.log(props);
+
+  console.log(sameMeal);
+  console.log(distinctItem);
   return (
     <div>
-      <h3>Selected Meal: {mealQuantity}</h3>
+      <h3>Selected Meal: {distinctItem.length}</h3>
       <div className="selected-meal">
         <ul>
-          {mealName.map((name) => (
-            <li key={name.idMeal}>
-              🍲 {name} {sameMeal}
-            </li>
+          {distinctItem.map((name) => (
+            <li key={name.idMeal}>🍲 {name}</li>
           ))}
         </ul>
       </div>
