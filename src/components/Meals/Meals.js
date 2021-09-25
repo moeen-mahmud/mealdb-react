@@ -9,7 +9,7 @@ const Meals = () => {
   const [displayMeal, setDisplayMeal] = useState([]);
 
   useEffect(() => {
-    fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+    fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
       .then((res) => res.json())
       .then((data) => setMeals(data.meals));
   }, []);
@@ -23,7 +23,7 @@ const Meals = () => {
     const searchText = event.target.value;
     searchText.toLowerCase();
     const endpoint = `https://www.themealdb.com/api/json/v1/1/search.php?f=${
-      searchText || "b"
+      searchText || "a"
     }`;
     fetch(endpoint)
       .then((res) => res.json())
