@@ -22,18 +22,29 @@ const Meals = () => {
   const handleChange = (event) => {
     const searchText = event.target.value;
     searchText.toLowerCase();
-    const endpoint = `https://www.themealdb.com/api/json/v1/1/search.php?f=${
-      searchText || "a"
-    }`;
-    fetch(endpoint)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.meals !== null) {
-          setDisplayMeal(data.meals);
-        } else {
-          return;
-        }
-      });
+    const endpointSearch = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+    const endpointLetter = `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchText}`;
+    if (searchText.length === 1) {
+      fetch(endpointLetter)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.meals !== null) {
+            setDisplayMeal(data.meals);
+          } else {
+            return;
+          }
+        });
+    } else {
+      fetch(endpointSearch)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.meals !== null) {
+            setDisplayMeal(data.meals);
+          } else {
+            return;
+          }
+        });
+    }
   };
 
   return (
@@ -43,7 +54,7 @@ const Meals = () => {
           type="text"
           name="search"
           id="search"
-          placeholder="Search Meal (only first letter)"
+          placeholder="Search Meal"
           onChange={handleChange}
         />
       </div>

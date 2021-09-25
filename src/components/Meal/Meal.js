@@ -15,7 +15,7 @@ const Meal = (props) => {
         <p>Category: {strCategory}</p>
         <p>Origin: {strArea}</p>
         <button onClick={() => props.handleClick(props.meal)}>
-          Grab {grabIcon}{" "}
+          Grab {grabIcon}
         </button>
       </div>
     </div>

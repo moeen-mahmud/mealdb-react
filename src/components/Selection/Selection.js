@@ -7,8 +7,13 @@ const Selection = (props) => {
   let distinctItem = [];
   let mealCounts = {};
   let mealName = [];
+  let mealKey = [];
   for (const meal of selection) {
     mealName.push(meal.strMeal);
+
+    if (mealKey.indexOf(meal) === -1) {
+      mealKey.push(meal.idMeal);
+    }
 
     if (totalMeal.indexOf(meal) === -1) {
       totalMeal.push(meal.strMeal);
@@ -24,16 +29,13 @@ const Selection = (props) => {
   totalMeal.forEach((x) => (mealCounts[x] = (mealCounts[x] || 0) + 1));
   const mealsQty = Object.values(mealCounts);
 
-  console.log(totalMeal);
-  console.log(distinctItem);
-  console.log(Object.values(mealCounts));
   return (
     <div className="selection-area">
       <h3>Selected Meal: {distinctItem.length}</h3>
       <div className="selected-meal">
         <div>
           {distinctItem.map((name) => (
-            <p key={props.idMeal}>🍲 {name}</p>
+            <p key={name}>🍲 {name}</p>
           ))}
         </div>
         <div>
