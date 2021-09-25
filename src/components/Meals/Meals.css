@@ -1,3 +1,4 @@
+/* Search Box Styling */
 .search-area {
   text-align: center;
   padding: 1rem 0;
@@ -12,17 +13,20 @@
   font-size: 1rem;
 }
 
+/* Initial meal area styling */
 .all-meals {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 2.8fr 1.3fr;
 }
 
+/* Style for only meal area */
 .meal-area {
   margin-left: 5rem;
   border-right: 1px solid #cfaae9;
 }
 
+/* Initial style for selection area */
 .selection-area {
   text-align: center;
 }
