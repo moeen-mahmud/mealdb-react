@@ -1,24 +1,26 @@
+//Importing necessary files
 import React from "react";
 import "./Selection.css";
 
+//The selection component
 const Selection = (props) => {
   const { selection } = props;
+
+  //Utilities variable for getting the particular meal
   let totalMeal = [];
   let distinctItem = [];
   let mealCounts = {};
   let mealName = [];
-  let mealKey = [];
+
   for (const meal of selection) {
-    mealName.push(meal.strMeal);
+    mealName.push(meal.strMeal); //This will get the name of meal and set it to the mealName array
 
-    if (mealKey.indexOf(meal) === -1) {
-      mealKey.push(meal.idMeal);
-    }
-
+    //This condition will count the total meal item
     if (totalMeal.indexOf(meal) === -1) {
       totalMeal.push(meal.strMeal);
     }
 
+    //This will help to find the unique meals
     for (const item of totalMeal) {
       if (distinctItem.indexOf(item) === -1) {
         distinctItem.push(item);
@@ -26,6 +28,7 @@ const Selection = (props) => {
     }
   }
 
+  //This will helps to find out how many times a meal has selected
   totalMeal.forEach((x) => (mealCounts[x] = (mealCounts[x] || 0) + 1));
   const mealsQty = Object.values(mealCounts);
 
