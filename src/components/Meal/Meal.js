@@ -1,8 +1,11 @@
 import React from "react";
 import "./Meal.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandRock } from "@fortawesome/free-solid-svg-icons";
 
 const Meal = (props) => {
   const { strMeal, strCategory, strArea, strMealThumb } = props.meal;
+  const grabIcon = <FontAwesomeIcon icon={faHandRock}></FontAwesomeIcon>;
 
   return (
     <div className="meal">
@@ -11,7 +14,9 @@ const Meal = (props) => {
         <h1>{strMeal}</h1>
         <p>Category: {strCategory}</p>
         <p>Origin: {strArea}</p>
-        <button onClick={() => props.handleClick(props.meal)}>Grab Me</button>
+        <button onClick={() => props.handleClick(props.meal)}>
+          Grab {grabIcon}{" "}
+        </button>
       </div>
     </div>
   );
