@@ -3,28 +3,28 @@ import "./Selection.css";
 
 const Selection = (props) => {
   const { selection } = props;
-  let sameMeal = [];
+  let totalMeal = [];
   let distinctItem = [];
   let mealCounts = {};
   let mealName = [];
   for (const meal of selection) {
     mealName.push(meal.strMeal);
 
-    if (sameMeal.indexOf(meal) === -1) {
-      sameMeal.push(meal.strMeal);
+    if (totalMeal.indexOf(meal) === -1) {
+      totalMeal.push(meal.strMeal);
     }
 
-    for (const item of sameMeal) {
+    for (const item of totalMeal) {
       if (distinctItem.indexOf(item) === -1) {
         distinctItem.push(item);
       }
     }
   }
 
-  sameMeal.forEach((x) => (mealCounts[x] = (mealCounts[x] || 0) + 1));
-  const onlyMeals = Object.values(mealCounts);
+  totalMeal.forEach((x) => (mealCounts[x] = (mealCounts[x] || 0) + 1));
+  const mealsQty = Object.values(mealCounts);
 
-  console.log(sameMeal);
+  console.log(totalMeal);
   console.log(distinctItem);
   console.log(Object.values(mealCounts));
   return (
@@ -32,18 +32,17 @@ const Selection = (props) => {
       <h3>Selected Meal: {distinctItem.length}</h3>
       <div className="selected-meal">
         <div>
-          <h3>Meal Name</h3>
           {distinctItem.map((name) => (
-            <p key={name.idMeal}>🍲 {name}</p>
+            <p key={props.idMeal}>🍲 {name}</p>
           ))}
         </div>
         <div>
-          <h3>Quantity</h3>
-          {onlyMeals.map((count) => (
-            <p key={props.idMeal}>{count}</p>
+          {mealsQty.map((count) => (
+            <p>{count} pack</p>
           ))}
         </div>
       </div>
+      <h2>Total meal packs: {totalMeal.length}</h2>
     </div>
   );
 };

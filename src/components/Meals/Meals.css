@@ -1,6 +1,21 @@
+.search-area {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #b771e9;
+}
+
+.search-area input {
+  padding: 0.7rem;
+  width: 75%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
 .all-meals {
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: 2.8fr 1.2fr;
+  grid-template-columns: 2.8fr 1.3fr;
 }
 
 .meal-area {

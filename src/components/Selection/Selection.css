@@ -1,5 +1,5 @@
 .selection-area {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 h3 {
@@ -9,8 +9,8 @@ h3 {
 .selected-meal {
   text-align: left;
   display: flex;
-  justify-content: space-around;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 0.7rem;
 }
 
 .selected-meal div h3 {
@@ -18,8 +18,14 @@ h3 {
 }
 
 .selected-meal div p {
+  padding-top: 1rem;
   font-weight: 600;
   font-size: 1rem;
+  height: 2rem;
+}
+
+.selected-meal div:nth-child(odd) {
+  overflow: hidden;
 }
 
 .selected-meal div:nth-child(even) {
