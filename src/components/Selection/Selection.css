@@ -1,3 +1,7 @@
+.selection-area {
+  padding: 0 2rem;
+}
+
 h3 {
   font-size: 2rem;
 }
@@ -5,13 +9,20 @@ h3 {
 .selected-meal {
   text-align: left;
   display: flex;
-  flex-direction: column;
-  margin-left: 1rem;
+  justify-content: space-around;
+  gap: 1rem;
 }
 
-.selected-meal > ul > li {
-  padding-bottom: 1rem;
-  list-style: none;
+.selected-meal div h3 {
+  font-size: 1.3rem;
+}
+
+.selected-meal div p {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
+}
+
+.selected-meal div:nth-child(even) {
+  font-style: italic;
+  text-align: center;
 }

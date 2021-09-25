@@ -1,6 +1,6 @@
 .all-meals {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2.8fr 1.2fr;
 }
 
 .meal-area {
